@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Open Sans';
+}
+
+.centerText{
+    text-align: center;
+}
+
+.logoContainer{
+    display: flex;
+    align-items: center;
+}
+
+nav{
+    user-select: none;
+}
+
+nav, ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+}
+
+nav ul{
+    width: 30%;
+}
+
+nav ul li, .btnLogin, .btnRegister{
+    transition: 0.5s;
+}
+
+nav ul li:hover, .btnLogin:hover, .btnRegister:hover{
+    cursor: pointer;
+    color: grey;
+    transform: scale(1.05);
+}
+
+.btnLogin{
+    border: none;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+}
+
+.btnRegister{
+    background-color: #2ad167;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.logoImg{
+    width: 2rem;
+}
+
+
+.logo {
+    font-family: Roboto;
+    font-size: 2rem;
+}
+
+#modal{
+    color: white;
+    background-color: #fff9;
+    position: fixed;
+    inset: 0;
+    transform: scale(0);
+    transition: 0.3s;
+    
+}
+
+#inputModal:checked+#modal{
+    transform: scale(1);
+}
+
+.modalInside{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 15rem;
+    background-color: #2a3342;
+    position: absolute;
+    inset: 4rem;
+}
+
+ #modal h2{
+    margin-top: 15px;
+} 
+
+#modal h5 {
+    color: grey;
+    margin-top: 10px;
+}
+
+
+.modalInside input, .modalInside button {
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+#modal label{
+    display: block;
+    color: white;
+}
+
+.modalImg{
+    background-color: #2ad167;
+    align-self: center;
+    border-radius: 10px;
+    padding: 0.5rem;
+    width: 2rem;
+}
+
+.closeBtn{
+    position: absolute;
+    top: 0;
+    right: 0.5rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.rememberCheck{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.checkFlex{
+    display: flex;
+}
+
+.modalInside a{
+    color: #2ad167;
+}
+
+.modalInside button{
+    background-color: #2ad167;
+    color: white;
+    border: none;
+    margin: 10px 0;
+}
+
+.labelModal{
+    margin: 20px 0 3px 0;
+}
