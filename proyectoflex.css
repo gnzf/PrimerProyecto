@@ -1,155 +1,290 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Open Sans';
+body,
+button {
+  font-family: "Open Sans";
 }
 
-.centerText{
-    text-align: center;
+.centerText {
+  text-align: center;
 }
 
-.logoContainer{
-    display: flex;
-    align-items: center;
+.logoContainer {
+  display: flex;
+  align-items: center;
 }
 
-nav{
-    user-select: none;
+nav {
+  user-select: none;
+}
+.navPopupBtn {
+  display: none;
+}
+nav,
+ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  justify-content: space-between;
 }
 
-nav, ul{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    justify-content: space-between;
+nav ul {
+  width: 30%;
 }
 
-nav ul{
-    width: 30%;
+nav ul li,
+.btnLogin,
+.btnRegister {
+  transition: 0.5s;
 }
 
-nav ul li, .btnLogin, .btnRegister{
-    transition: 0.5s;
+nav ul li:hover,
+.btnLogin:hover,
+.btnRegister:hover {
+  cursor: pointer;
+  color: grey;
+  transform: scale(1.05);
 }
 
-nav ul li:hover, .btnLogin:hover, .btnRegister:hover{
-    cursor: pointer;
-    color: grey;
-    transform: scale(1.05);
+.btnLogin {
+  border: none;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
 }
 
-.btnLogin{
-    border: none;
-    background-color: transparent;
-    padding: 0.5rem 1rem;
+.btnRegister {
+  background-color: #2ad167;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
-.btnRegister{
-    background-color: #2ad167;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    border: none;
-    color: white;
-    cursor: pointer;
+.logoImg {
+  width: 2rem;
 }
-
-.logoImg{
-    width: 2rem;
-}
-
 
 .logo {
-    font-family: Roboto;
-    font-size: 2rem;
+  font-family: Roboto;
+  font-size: 2rem;
+}
+#modal {
+  color: white;
+  background-color: #fff9;
+  position: fixed;
+  inset: 0;
+}
+.modalInside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 15rem;
+  background-color: #2a3342;
+  position: absolute;
+  inset: 4rem;
 }
 
-#modal{
-    color: white;
-    background-color: #fff9;
-    position: fixed;
-    inset: 0;
-    transform: scale(0);
-    transition: 0.3s;
-    
+#modal h2 {
+  margin-top: 15px;
 }
-
-#inputModal:checked+#modal{
-    transform: scale(1);
-}
-
-.modalInside{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 5rem 15rem;
-    background-color: #2a3342;
-    position: absolute;
-    inset: 4rem;
-}
-
- #modal h2{
-    margin-top: 15px;
-} 
 
 #modal h5 {
-    color: grey;
-    margin-top: 10px;
+  color: grey;
+  margin-top: 10px;
 }
 
-
-.modalInside input, .modalInside button {
-    padding: 0.5rem;
-    border-radius: 5px;
+.modalInside input,
+.modalInside button {
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 
-#modal label{
+#modal label {
+  display: block;
+  color: white;
+}
+
+.modalImg {
+  background-color: #2ad167;
+  align-self: center;
+  border-radius: 10px;
+  padding: 0.5rem;
+  width: 2rem;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.rememberCheck {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.checkFlex {
+  display: flex;
+}
+
+.modalInside a {
+  color: #2ad167;
+}
+
+.modalInside button {
+  background-color: #2ad167;
+  color: white;
+  border: none;
+  margin: 10px 0;
+}
+
+.labelModal {
+  margin: 20px 0 3px 0;
+}
+
+header {
+  max-width: 800px;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.headerText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.headerText span {
+  font-size: 0.7rem;
+  background-color: #2ad167;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 16px;
+}
+header h1 {
+  font-family: Roboto;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+header h5 {
+  opacity: 0.5;
+  margin-bottom: 1rem;
+}
+header button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+.greenBtn {
+  border: none;
+  color: white;
+  background-color: #2ad167;
+}
+.whiteBtn {
+  border: 1px solid #0003;
+  background-color: white;
+}
+.headerImgContainer {
+  position: relative;
+  background-image: url(./Materiales/header.jpg);
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 1;
+}
+.imgTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.imgBottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.caracteristics {
+  display: flex;
+}
+.caracteristics article {
+  text-align: center;
+  padding: 2rem;
+}
+.caracteristics img {
+  background-color: #2ad167;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.6rem;
+  border-radius: 0.3rem;
+}
+.caracteristics h5 {
+  padding: 0.3rem 0;
+}
+.caracteristics p {
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+.popupCheck {
+  display: none;
+}
+.popupCheck:checked + .popup {
+  opacity: 1;
+  z-index: 1000;
+}
+.popup {
+  opacity: 0;
+  z-index: -100;
+  transition: 0.2s;
+}
+
+@media screen and (max-width: 500px) {
+  .navPopupBtn {
     display: block;
-    color: white;
-}
-
-.modalImg{
-    background-color: #2ad167;
-    align-self: center;
-    border-radius: 10px;
+    margin: 0.5rem;
     padding: 0.5rem;
-    width: 2rem;
-}
-
-.closeBtn{
+    border: 1px solid #0003;
+    border-radius: 4px;
+  }
+  nav ul {
     position: absolute;
-    top: 0;
-    right: 0.5rem;
+    top: 3.5rem;
+    left: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    border: 1px solid #0003;
+  }
+  nav ul li {
+    padding: 0.5rem;
+  }
+  header {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .caracteristics {
+    display: block;
+  }
+  .caracteristics img {
+    width: 3.5rem;
+    height: 3.5rem;
     padding: 1rem;
-    cursor: pointer;
-}
-
-.rememberCheck{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.checkFlex{
-    display: flex;
-}
-
-.modalInside a{
-    color: #2ad167;
-}
-
-.modalInside button{
-    background-color: #2ad167;
-    color: white;
-    border: none;
-    margin: 10px 0;
-}
-
-.labelModal{
-    margin: 20px 0 3px 0;
+  }
+  .caracteristics h5 {
+    font-size: 1.5rem;
+  }
+  .caracteristics p {
+    font-size: 1rem;
+  }
 }

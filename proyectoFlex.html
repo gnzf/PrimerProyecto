@@ -1,51 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flex</title>
-    <link rel="stylesheet" href="proyectoflex.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet"> 
-</head>
-   <nav id="#">
-    <div class="logoContainer">
-        <img class="logoImg" src="./Materiales/logo-verde.png">
+    <link rel="stylesheet" href="proyectoflex.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <!--
+<style>
+      .carousel {
+        background-color: pink;
+        position: relative;
+      }
+      .carousel label {
+        display: block;
+        position: absolute;
+        top: 30px;
+        left: 0;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: 1;
+      }
+      .carousel input:checked + label {
+        opacity: 1;
+        z-index: 10;
+      }
+      @media screen and (max-width: 375px) {
+        .carousel label {
+          position: static;
+          opacity: 1;
+        }
+      }
+    </style>
+
+
+    -->
+  </head>
+  <body>
+    <nav>
+      <div class="logoContainer">
+        <img class="logoImg" src="./Materiales/logo-verde.png" />
         <p class="logo">Flex</p>
-    </div>
-    <ul>
+        <label class="navPopupBtn" for="navCollapse">☰</label>
+      </div>
+      <input type="checkbox" class="popupCheck" id="navCollapse" />
+      <ul class="popup">
         <li>Producto</li>
         <li>Caracteristicas</li>
         <li>Precios</li>
-    </ul>
-    <div>
+      </ul>
+      <div>
         <label class="btnLogin" for="inputModal">Ingresar</label>
         <button class="btnRegister">Registrarse</button>
-    </div>
-   </nav>
-
-   <input id="inputModal" type="checkbox" hidden="none">
-   <div id="modal">
-        <div class="modalInside">
-            <label class="closeBtn" for="inputModal">x</label>
-            <img class="modalImg" src="./Materiales/logo-blanco.png">
-            <h2 class="centerText">Ingresa a tu cuenta</h2>
-            <h5 class="centerText">y empieza a conseguir resultados</h5>
-            <label class="labelModal">Correo</label>
-            <input type="email">
-            <label class="labelModal">Contraseña</label>
-            <input type="password">
-            <div class="rememberCheck labelModal">
-                <div class="checkFlex">
-                    <input type="checkbox">
-                    <label>Recordarme</label>
-                </div>
-                <a>Olvide mi contraseña</a>
-            </div>
-            <button>Ingresar</button>
-            <p class="centerText">Aún no tienes cuenta? <a>Registrarse</a></p>
+      </div>
+    </nav>
+    <header>
+      <div class="headerText">
+        <span>NUEVO</span>
+        <h1>La plataforma para las empresas del futuro</h1>
+        <h5>Productos pensados para los negocios del próximo siglo</h5>
+        <div>
+          <button class="greenBtn">Solicitar demo</button
+          ><button class="whiteBtn">Registrarse</button>
         </div>
-   </div>
-</body>
+      </div>
+      <div class="headerImgContainer">
+        <img class="imgTop" src="./Materiales/circle3-yellow.svg" />
+        <img class="imgBottom" src="./Materiales/dots3-blue.svg" />
+      </div>
+    </header>
+    <main>
+      <section class="caracteristics">
+        <article>
+          <img src="./Materiales/mail-icon.svg" alt="" />
+          <h5>Capacitación</h5>
+          <p>Asistencia y capacitación de primer nivel</p>
+        </article>
+        <article>
+          <img src="./Materiales/analytics-icon.svg" alt="" />
+          <h5>Analíticas claras</h5>
+          <p>Disfruta de un dashboard de analíticas claras y accionables</p>
+        </article>
+        <article>
+          <img src="./Materiales/people-icon.svg" alt="" />
+          <h5>Soluciones para equipos</h5>
+          <p>
+            Facilita el accionar de tu empresa con nuestra suite de herramientas
+          </p>
+        </article>
+      </section>
+
+      Carousel de prueba
+      <div class="carousel">
+        <input type="radio" name="carousel" id="plan-0" />
+        <label for="plan-0"
+          >Plan basico<br />$10 /mes <br />
+          facturado anualmente</label
+        >
+        <input type="radio" name="carousel" id="plan-1" />
+        <label for="plan-1"
+          >Plan Freelancer<br />$99 /mes <br />
+          facturado anualmente</label
+        >
+        <input type="radio" name="carousel" id="plan-2" />
+        <label for="plan-2"
+          >Plan Empresa<br />$799 /mes <br />
+          facturado anualmente</label
+        >
+      </div>
+    </main>
+
+    <input class="popupCheck" id="inputModal" type="checkbox" hidden="none" />
+    <div class="popup" id="modal">
+      <div class="modalInside">
+        <label class="closeBtn" for="inputModal">x</label>
+        <img class="modalImg" src="./Materiales/logo-blanco.png" />
+        <h2 class="centerText">Ingresa a tu cuenta</h2>
+        <h5 class="centerText">y empieza a conseguir resultados</h5>
+        <label class="labelModal">Correo</label>
+        <input type="email" />
+        <label class="labelModal">Contraseña</label>
+        <input type="password" />
+        <div class="rememberCheck labelModal">
+          <div class="checkFlex">
+            <input type="checkbox" />
+            <label>Recordarme</label>
+          </div>
+          <a>Olvide mi contraseña</a>
+        </div>
+        <button>Ingresar</button>
+        <p class="centerText">Aún no tienes cuenta? <a>Registrarse</a></p>
+      </div>
+    </div>
+    <script>
+      window.addEventListener("resize", function () {
+        if (window.innerWidth >= 500) {
+          document.getElementById("navCollapse").checked = true;
+        } else {
+          document.getElementById("navCollapse").checked = false;
+        }
+      });
+    </script>
+  </body>
 </html>
