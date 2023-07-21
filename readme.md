@@ -30,8 +30,8 @@
 3. Agregar estilos a el header.
 4. Ver correcciones en nav y header.
 
-
 [Logros-Miercoles]
+
 1. Armamos estructura del header y aplicamos estilos.
 2. Armamos estructura de las dos secciones del Main
 3. Armamos los diseños responsive del nav y seccion caracteristicas.
@@ -39,7 +39,23 @@
 5. Creamos dinamismo al apretar botones para esconder el nav y mostrar el modal.
 
 [Objetivo-jueves]
+
 1. Ultimar detalles de clase anterior.
 2. Hacer css de seccion precios.
 3. Armar estructura de footer.
 4. Verificar diseños responsive.
+
+[Logros-Jueves]
+
+1. Ajustes varios en el estilo (ajustes de margin y pading varios).
+2. Completamos seccion de caracteristicas, con su media query requerida.
+3. Completamos seccion precios con carousel en modo celular.
+4. Completamos el footer.
+
+[Objetivo-Viernes]
+
+1. Ajustar padding de barra de navegacion.
+2. Revisar bug de boton de navegacion responsivo.
+3. Agregar validaciones de correo y contraseña en el ingreso.
+4. Agregarle una transicion a el carousel de pricing.
+5. Agregar links internos en los botones de navegacion.

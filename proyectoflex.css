@@ -24,6 +24,7 @@ button {
 }
 nav {
   user-select: none;
+  padding: 0.5rem;
 }
 .navPopupBtn {
   display: none;
@@ -42,19 +43,21 @@ nav ul {
 
 nav ul li,
 .btnLogin,
-.btnRegister {
+.btnRegister,
+a {
   transition: 0.5s;
 }
 
 nav ul li:hover,
 .btnLogin:hover,
-.btnRegister:hover {
+.btnRegister:hover,
+a:hover {
   cursor: pointer;
   color: grey;
   transform: scale(1.05);
 }
 
-.loginRegister{
+.loginRegister {
   display: flex;
   justify-content: flex-end;
   padding-right: 0.5rem;
@@ -84,6 +87,10 @@ nav ul li:hover,
   font-family: Roboto;
   font-size: 2rem;
 }
+nav a {
+  text-decoration: none;
+  color: black;
+}
 
 /* VERSION MODAL */
 #modal {
@@ -112,7 +119,7 @@ nav ul li:hover,
   margin-top: 10px;
 }
 
-.modalInside form{
+.modalInside form {
   display: flex;
   flex-direction: column;
   max-width: 25rem;
@@ -275,15 +282,15 @@ header button {
 }
 
 /* SECCION PRECIOS CARRUSEL */
-.carousel{
+.carousel {
   display: flex;
   position: relative;
   flex-direction: row;
   justify-content: space-around;
 }
 
-.carousel article ul{
-  display:flex;
+.carousel article ul {
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding-bottom: 1rem;
@@ -293,28 +300,30 @@ header button {
   content: "✓";
   color: white;
   background-color: #2ad167;
-  aspect-ratio: 1;
-  padding: 0.3rem;
+  padding: 0rem 0.1rem;
+  position: relative;
+  bottom: 1px;
   border-radius: 50%;
-  font-size: 0.4rem;
+  font-size: 1rem;
   margin-right: 10px;
 }
 
-.carousel li{
-  padding: 0.2rem;
+.carousel li {
+  opacity: 0.7;
+  padding: 0.5rem;
   text-align: left;
 }
 
-.carousel p{
+.carousel p {
   color: #2ad167;
   text-align: center;
 }
 
-.price{
+.price {
   font-size: 0.5rem;
 }
 
-#priceSection{
+#priceSection {
   max-width: 1000px;
   margin: 3rem auto;
   padding: 0 2rem;
@@ -325,23 +334,24 @@ header button {
   opacity: 0.5;
 }
 
-#priceSection h4{
+#priceSection h4 {
   font-size: 2rem;
   padding: 0.5rem;
 }
-#priceSection h4::before{
+#priceSection h4::before {
   content: "$";
   font-size: 1rem;
   position: relative;
-  bottom: 1rem;
+  bottom: 0.8rem;
 }
-#priceSection h4::after{
+#priceSection h4::after {
   content: "/mes";
   font-size: 1.5rem;
 }
 
 .carousel article {
   background-color: #f7f8f9;
+  animation: fadeIn 1s;
   padding: 2rem 1rem;
   width: 30%;
   display: flex;
@@ -349,19 +359,26 @@ header button {
   text-align: center;
   border-radius: 5px;
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
-.carousel button{
+.carousel button {
   padding: 0.5rem;
   border-radius: 5px;
 }
 
 /* FOOTER SECTION */
-footer .logo{
+footer .logo {
   color: white;
-  
 }
 
-footer{
+footer {
   background-color: #2a3342;
   display: flex;
   flex-direction: column;
@@ -378,32 +395,35 @@ footer ul {
   flex-wrap: wrap;
 }
 
-footer li{
+footer li {
   padding: 5px;
 }
 
-footer hr{
+footer hr {
   border: 1px solid #fff8;
   width: 100%;
   margin-bottom: 2rem;
 }
 
 /* CARRUSEL INPUT */
-.carousel input{
+.carousel input {
   display: none;
 }
 
-.carousel .carruselNext, .carousel .carruselPrev{
+.carousel .carruselNext,
+.carousel .carruselPrev {
   display: none;
 }
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 500px) {
   .navPopupBtn {
+    text-align: center;
     display: block;
-    margin: 0.5rem;
-    padding: 0.5rem;
-    border: 1px solid #0003;
+    margin: 0 0.5rem;
+    padding: 0.4rem 0;
+    width: 2rem;
+    border: 1px solid #0002;
     border-radius: 4px;
   }
   nav ul {
@@ -437,21 +457,21 @@ footer hr{
     font-size: 1rem;
   }
 
-  .modalInside{
+  .modalInside {
     inset: 4rem 0.5rem;
   }
 
-  .carousel article{
+  .carousel article {
     display: none;
     width: 100%;
-    
   }
 
-  .carousel input:checked+article{
+  .carousel input:checked + article {
     display: flex;
   }
 
-  .carousel .carruselPrev, .carousel .carruselNext {
+  .carousel .carruselPrev,
+  .carousel .carruselNext {
     display: block;
     position: absolute;
     border: none;
@@ -467,7 +487,7 @@ footer hr{
     left: 0;
   }
 
-  .carruselNext{
+  .carruselNext {
     right: 0;
   }
 }

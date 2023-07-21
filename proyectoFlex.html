@@ -50,16 +50,16 @@
       </div>
       <input type="checkbox" class="popupCheck" id="navCollapse" />
       <ul class="popup">
-        <li>Producto</li>
-        <li>Caracteristicas</li>
-        <li>Precios</li>
+        <li><a href="#product">Producto</a></li>
+        <li><a href="#characeristics">Caracteristicas</a></li>
+        <li><a href="#priceSection">Precios</a></li>
       </ul>
       <div class="loginRegister">
         <label class="btnLogin" for="inputModal">Ingresar</label>
         <button class="btnRegister">Registrarse</button>
       </div>
     </nav>
-    <header>
+    <header id="product">
       <div class="headerText">
         <span>NUEVO</span>
         <h1>La plataforma para las empresas del futuro</h1>
@@ -75,7 +75,7 @@
       </div>
     </header>
     <main>
-      <section class="caracteristics">
+      <section id="characeristics" class="caracteristics">
         <article>
           <img src="./Materiales/mail-icon.svg" alt="" />
           <h5>Capacitación</h5>
@@ -97,26 +97,29 @@
 
       <section id="priceSection">
         <h2>Precios flexibles que escalan contigo</h2>
-        <h5>Nuestra facturacion se ajusta al tamaño de tu empresa. Tiempo de prueba de 7 dias en todos nuestros planes.</h5>
-      <div class="carousel">
-        <input type="radio" name="PriceList">
-        <article>
-          <p class="price">PRECIO</p>
-          <p>Plan basico</p>
-          <h4>10</h4>
-          <h5>Facturado anualmente</h5>
-          <ul>
-            <li>1GB de almacenamiento</li>
-            <li>Dashboard completo</li>
-            <li>Asistencia por correo</li>
-            <li>Hasta 10 miembros</li>
-          </ul>
-          <button class="greenBtn">Solicitar demo</button>
-        </article>
-        <input type="radio" name="PriceList" checked>
-        <article>
-          <p class="price">PRECIO</p>
-          <p>Plan Freelancer</p>
+        <h5>
+          Nuestra facturacion se ajusta al tamaño de tu empresa. Tiempo de
+          prueba de 7 dias en todos nuestros planes.
+        </h5>
+        <div class="carousel">
+          <input type="radio" name="PriceList" />
+          <article>
+            <p class="price">PRECIO</p>
+            <p>Plan basico</p>
+            <h4>10</h4>
+            <h5>Facturado anualmente</h5>
+            <ul>
+              <li>1GB de almacenamiento</li>
+              <li>Dashboard completo</li>
+              <li>Asistencia por correo</li>
+              <li>Hasta 10 miembros</li>
+            </ul>
+            <button class="greenBtn">Solicitar demo</button>
+          </article>
+          <input type="radio" name="PriceList" checked />
+          <article>
+            <p class="price">PRECIO</p>
+            <p>Plan Freelancer</p>
             <h4>99</h4>
             <h5>Facturado anualmente</h5>
             <ul>
@@ -126,25 +129,25 @@
               <li>Hasta 100 miembros</li>
             </ul>
             <button class="greenBtn">Solicitar demo</button>
-        </article>
-        <input type="radio" name="PriceList">
-        <article>
-          <p class="price">PRECIO</p>
-          <p>Plan Empresa</p>
-          <h4>799</h4> 
-          <h5>Facturado anualmente</h5>
-          <ul>
-            <li>Caracteristicas freelancer</li>
-            <li>1TB de almacenamiento</li>
-            <li>Asistencia telefonica 24/7</li>
-            <li>Miembros ilimitados</li>
-          </ul>
-          <button class="greenBtn">Solicitar demo</button>
-        </article>
-        <button class="carruselPrev" onclick="carouselPrev()"> < </button>
-        <button class="carruselNext" onclick="carouselNext()">></button>
-      </div>
-    </section>
+          </article>
+          <input type="radio" name="PriceList" />
+          <article>
+            <p class="price">PRECIO</p>
+            <p>Plan Empresa</p>
+            <h4>799</h4>
+            <h5>Facturado anualmente</h5>
+            <ul>
+              <li>Caracteristicas freelancer</li>
+              <li>1TB de almacenamiento</li>
+              <li>Asistencia telefonica 24/7</li>
+              <li>Miembros ilimitados</li>
+            </ul>
+            <button class="greenBtn">Solicitar demo</button>
+          </article>
+          <button class="carruselPrev" onclick="carouselPrev()"><</button>
+          <button class="carruselNext" onclick="carouselNext()">></button>
+        </div>
+      </section>
     </main>
     <input class="popupCheck" id="inputModal" type="checkbox" hidden="none" />
     <div class="popup" id="modal">
@@ -184,21 +187,23 @@
         <li>Ayuda</li>
         <li>Privacidad</li>
       </ul>
-      <hr/>
+      <hr />
       <p>©2022 Flex.Un producto ficticio de Senpai.</p>
     </footer>
     <script>
       // MUESTRA Y OCULTAR BARRA DE NAVEGACIÓN AL AJUSTAR TAMAÑO
-      window.addEventListener("resize", function () {
+      function navCollapse() {
         if (window.innerWidth >= 500) {
           document.getElementById("navCollapse").checked = true;
         } else {
           document.getElementById("navCollapse").checked = false;
         }
-      });
+      }
+      window.addEventListener("resize", navCollapse);
+      navCollapse();
 
       //MUEVE EL CARRUSEL EN RESPONSIVE
-      const carousel = document.querySelectorAll(".carousel input")
+      const carousel = document.querySelectorAll(".carousel input");
       let carouselPosition = 1;
 
       function carouselNext() {
@@ -206,12 +211,26 @@
         carousel[carouselPosition].checked = true;
       }
       function carouselPrev() {
-        carouselPosition = (carouselPosition - 1 + carousel.length) % carousel.length;
+        carouselPosition =
+          (carouselPosition - 1 + carousel.length) % carousel.length;
         carousel[carouselPosition].checked = true;
       }
-      
+      const carouselContainer = document.querySelector(".carousel");
+      let carouselTouch = null;
+      carouselContainer.addEventListener("touchstart", function (e) {
+        carouselTouch = e.touches[0].clientX;
+      });
+      carouselContainer.addEventListener("touchend", function (e) {
+        let touchMove = e.changedTouches[0].clientX - carouselTouch;
+        if (touchMove < -32) {
+          carouselPrev();
+        } else if (touchMove > 32) {
+          carouselNext();
+        }
+      });
+      carouselContainer.addEventListener("touchcancel", function (e) {
+        carouselTouch = null;
+      });
     </script>
   </body>
 </html>
-
-
