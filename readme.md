@@ -29,3 +29,17 @@
 2. Armar estructura del Main.
 3. Agregar estilos a el header.
 4. Ver correcciones en nav y header.
+
+
+[Logros-Miercoles]
+1. Armamos estructura del header y aplicamos estilos.
+2. Armamos estructura de las dos secciones del Main
+3. Armamos los diseños responsive del nav y seccion caracteristicas.
+4. Armamos una estructura de carrousel para diseño responsive de los Planes.
+5. Creamos dinamismo al apretar botones para esconder el nav y mostrar el modal.
+
+[Objetivo-jueves]
+1. Ultimar detalles de clase anterior.
+2. Hacer css de seccion precios.
+3. Armar estructura de footer.
+4. Verificar diseños responsive.

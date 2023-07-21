@@ -1,3 +1,4 @@
+/* GENERAL */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 * {
@@ -15,11 +16,12 @@ button {
   text-align: center;
 }
 
+/* BARRA DE NAVEGACION */
+
 .logoContainer {
   display: flex;
   align-items: center;
 }
-
 nav {
   user-select: none;
 }
@@ -35,7 +37,7 @@ ul {
 }
 
 nav ul {
-  width: 30%;
+  gap: 1rem;
 }
 
 nav ul li,
@@ -50,6 +52,12 @@ nav ul li:hover,
   cursor: pointer;
   color: grey;
   transform: scale(1.05);
+}
+
+.loginRegister{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 0.5rem;
 }
 
 .btnLogin {
@@ -68,13 +76,16 @@ nav ul li:hover,
 }
 
 .logoImg {
-  width: 2rem;
+  width: 3rem;
+  padding: 2px;
 }
 
 .logo {
   font-family: Roboto;
   font-size: 2rem;
 }
+
+/* VERSION MODAL */
 #modal {
   color: white;
   background-color: #fff9;
@@ -85,7 +96,8 @@ nav ul li:hover,
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem 15rem;
+  align-items: center;
+  padding: 5rem 1rem;
   background-color: #2a3342;
   position: absolute;
   inset: 4rem;
@@ -98,6 +110,12 @@ nav ul li:hover,
 #modal h5 {
   color: grey;
   margin-top: 10px;
+}
+
+.modalInside form{
+  display: flex;
+  flex-direction: column;
+  max-width: 25rem;
 }
 
 .modalInside input,
@@ -116,7 +134,7 @@ nav ul li:hover,
   align-self: center;
   border-radius: 10px;
   padding: 0.5rem;
-  width: 2rem;
+  width: 3rem;
 }
 
 .closeBtn {
@@ -127,6 +145,7 @@ nav ul li:hover,
   cursor: pointer;
 }
 
+/* SECCION CHECK (RECORDARME)*/
 .rememberCheck {
   display: flex;
   justify-content: space-between;
@@ -153,8 +172,9 @@ nav ul li:hover,
   margin: 20px 0 3px 0;
 }
 
+/* SECCION HEADER */
 header {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 3rem auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -215,8 +235,11 @@ header button {
   bottom: 0;
   right: 0;
 }
+
+/* SECCION CARACTERISTICAS */
 .caracteristics {
   display: flex;
+  justify-content: space-around;
 }
 .caracteristics article {
   text-align: center;
@@ -236,6 +259,8 @@ header button {
   font-size: 0.7rem;
   opacity: 0.7;
 }
+
+/* POP UP RESPONSIVE */
 .popupCheck {
   display: none;
 }
@@ -249,6 +274,130 @@ header button {
   transition: 0.2s;
 }
 
+/* SECCION PRECIOS CARRUSEL */
+.carousel{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.carousel article ul{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 1rem;
+}
+
+.carousel li:before {
+  content: "✓";
+  color: white;
+  background-color: #2ad167;
+  aspect-ratio: 1;
+  padding: 0.3rem;
+  border-radius: 50%;
+  font-size: 0.4rem;
+  margin-right: 10px;
+}
+
+.carousel li{
+  padding: 0.2rem;
+  text-align: left;
+}
+
+.carousel p{
+  color: #2ad167;
+  text-align: center;
+}
+
+.price{
+  font-size: 0.5rem;
+}
+
+#priceSection{
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+#priceSection h5 {
+  padding: 1rem 0 2rem 0;
+  opacity: 0.5;
+}
+
+#priceSection h4{
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+#priceSection h4::before{
+  content: "$";
+  font-size: 1rem;
+  position: relative;
+  bottom: 1rem;
+}
+#priceSection h4::after{
+  content: "/mes";
+  font-size: 1.5rem;
+}
+
+.carousel article {
+  background-color: #f7f8f9;
+  padding: 2rem 1rem;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.carousel button{
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+/* FOOTER SECTION */
+footer .logo{
+  color: white;
+  
+}
+
+footer{
+  background-color: #2a3342;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  color: #fff8;
+}
+
+footer ul {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  padding: 2rem 0;
+  flex-wrap: wrap;
+}
+
+footer li{
+  padding: 5px;
+}
+
+footer hr{
+  border: 1px solid #fff8;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* CARRUSEL INPUT */
+.carousel input{
+  display: none;
+}
+
+.carousel .carruselNext, .carousel .carruselPrev{
+  display: none;
+}
+
+/* MEDIA QUERIES */
 @media screen and (max-width: 500px) {
   .navPopupBtn {
     display: block;
@@ -286,5 +435,39 @@ header button {
   }
   .caracteristics p {
     font-size: 1rem;
+  }
+
+  .modalInside{
+    inset: 4rem 0.5rem;
+  }
+
+  .carousel article{
+    display: none;
+    width: 100%;
+    
+  }
+
+  .carousel input:checked+article{
+    display: flex;
+  }
+
+  .carousel .carruselPrev, .carousel .carruselNext {
+    display: block;
+    position: absolute;
+    border: none;
+    padding: 0.5rem;
+    opacity: 25%;
+    color: white;
+    background-color: #2a3342;
+    border-radius: 50%;
+    top: 40%;
+  }
+
+  .carruselPrev {
+    left: 0;
+  }
+
+  .carruselNext{
+    right: 0;
   }
 }
