@@ -153,14 +153,14 @@
     <div class="popup" id="modal">
       <div class="modalInside">
         <label class="closeBtn" for="inputModal">x</label>
-        <form>
+        <form id="modalForm">
           <img class="modalImg" src="./Materiales/logo-blanco.png" />
           <h2 class="centerText">Ingresa a tu cuenta</h2>
           <h5 class="centerText">y empieza a conseguir resultados</h5>
           <label class="labelModal">Correo</label>
-          <input type="email" />
+          <input type="email" id="loginEmail" />
           <label class="labelModal">Contraseña</label>
-          <input type="password" />
+          <input type="password" id="loginPassword" />
           <div class="rememberCheck labelModal">
             <div class="checkFlex">
               <input type="checkbox" />
@@ -169,7 +169,9 @@
             <a>Olvide mi contraseña</a>
           </div>
           <button>Ingresar</button>
-          <p class="centerText modalRegister">Aún no tienes cuenta? <a>Registrarse</a></p>
+          <p class="centerText modalRegister">
+            Aún no tienes cuenta? <a>Registrarse</a>
+          </p>
         </form>
       </div>
     </div>
@@ -201,36 +203,11 @@
       }
       window.addEventListener("resize", navCollapse);
       navCollapse();
-
-      //MUEVE EL CARRUSEL EN RESPONSIVE
-      const carousel = document.querySelectorAll(".carousel input");
-      let carouselPosition = 1;
-
-      function carouselNext() {
-        carouselPosition = (carouselPosition + 1) % carousel.length;
-        carousel[carouselPosition].checked = true;
-      }
-      function carouselPrev() {
-        carouselPosition =
-          (carouselPosition - 1 + carousel.length) % carousel.length;
-        carousel[carouselPosition].checked = true;
-      }
-      const carouselContainer = document.querySelector(".carousel");
-      let carouselTouch = null;
-      carouselContainer.addEventListener("touchstart", function (e) {
-        carouselTouch = e.touches[0].clientX;
-      });
-      carouselContainer.addEventListener("touchend", function (e) {
-        let touchMove = e.changedTouches[0].clientX - carouselTouch;
-        if (touchMove < -32) {
-          carouselPrev();
-        } else if (touchMove > 32) {
-          carouselNext();
-        }
-      });
-      carouselContainer.addEventListener("touchcancel", function (e) {
-        carouselTouch = null;
-      });
     </script>
+    <script type="module">
+      import loginForm from "./loginForm.js";
+      loginForm();
+    </script>
+    <script src="./carousel.js"></script>
   </body>
 </html>
