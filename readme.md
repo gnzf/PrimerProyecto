@@ -59,3 +59,17 @@
 3. Agregar validaciones de correo y contraseña en el ingreso.
 4. Agregarle una transicion a el carousel de pricing.
 5. Agregar links internos en los botones de navegacion.
+
+[Logros-Viernes]
+
+1. Ajustamos barra de navegacion.
+2. Arreglamos bugs en el cambio responsivo.
+3. Agregamos las validaciones del formulario con email y contraseña.
+4. Agregamos transicion al carousel con botones y touch.
+5. Agregamos links internos en las opciones de la barra de navegacion.
+6. Agregamos link de scripts.
+
+[Objetivos-Lunes]
+
+1. Revisar tamaños y fuentes.
+2. Buscar bugs visuales.

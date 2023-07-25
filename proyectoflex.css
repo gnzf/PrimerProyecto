@@ -167,8 +167,10 @@ nav a {
   display: flex;
 }
 
-.modalInside a {
+#modal .registerLink {
   color: #2ad167;
+  display: inline;
+  cursor: pointer;
 }
 
 .modalInside button {
@@ -176,6 +178,7 @@ nav a {
   color: white;
   border: none;
   margin: 10px 0;
+  cursor: pointer;
 }
 
 .labelModal {
@@ -184,8 +187,17 @@ nav a {
 
 .modalRegister {
   font-size: 0.6rem;
+  gap: 5px;
 }
 
+select {
+ padding: 0.5rem;
+ 
+}
+
+.repeatPassword{
+  margin-bottom: 1rem;
+}
 /* SECCION HEADER */
 header {
   max-width: 1200px;
@@ -221,6 +233,7 @@ header button {
   padding: 0.4rem 0.8rem;
   border-radius: 4px;
   margin-right: 8px;
+  cursor: pointer;
 }
 .greenBtn {
   border: none;
@@ -228,8 +241,13 @@ header button {
   background-color: #2ad167;
 }
 .whiteBtn {
-  border: 1px solid #0003;
+  border: 0.5px solid #0003;
   background-color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  margin-right: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
 }
 .headerImgContainer {
   position: relative;
