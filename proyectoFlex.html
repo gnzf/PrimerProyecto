@@ -14,10 +14,12 @@
   </head>
   <body>
     <nav>
-      <div class="logoContainer">
+      <div class="flex-aligned">
         <img class="logoImg" src="./Materiales/logo-verde.png" />
-        <p class="logo">Flex</p>
-        <label class="navPopupBtn" for="navCollapse">☰</label>
+        <p class="logo big">Flex</p>
+        <label class="centerText btn grey-border navPopupBtn" for="navCollapse"
+          >☰</label
+        >
       </div>
       <input type="checkbox" class="popupCheck" id="navCollapse" />
       <ul class="popup">
@@ -26,18 +28,22 @@
         <li><a href="#priceSection">Precios</a></li>
       </ul>
       <div class="loginRegister">
-        <label class="btnLogin" for="inputModal">Ingresar</label>
-        <label class="btnRegister" for="inputModalRegister">Registrarse</ñ>
+        <label for="inputModal">Ingresar</label>
+        <label class="green-bg" for="inputModalRegister">Registrarse</label>
       </div>
     </nav>
     <header id="product">
-      <div class="headerText">
-        <span>NUEVO</span>
-        <h1>La plataforma para las empresas del futuro</h1>
-        <h5>Productos pensados para los negocios del próximo siglo</h5>
-        <div>
-          <button class="greenBtn">Solicitar demo</button>
-          <label class="whiteBtn" for="inputModalRegister">Registrarse</label>
+      <div class="flex-column headerText">
+        <span class="green-bg">NUEVO</span>
+        <h1 class="big">La plataforma para las empresas del futuro</h1>
+        <h5 class="grey-text">
+          Productos pensados para los negocios del próximo siglo
+        </h5>
+        <div class="flex-aligned">
+          <label class="btn green-bg">Solicitar demo</label>
+          <label class="btn grey-border" for="inputModalRegister"
+            >Registrarse</label
+          >
         </div>
       </div>
       <div class="headerImgContainer">
@@ -46,21 +52,23 @@
       </div>
     </header>
     <main>
-      <section id="characeristics" class="caracteristics">
-        <article>
-          <img src="./Materiales/mail-icon.svg" alt="" />
+      <section id="characeristics" class="flex-around caracteristics">
+        <article class="centerText">
+          <img class="green-bg" src="./Materiales/mail-icon.svg" alt="" />
           <h5>Capacitación</h5>
-          <p>Asistencia y capacitación de primer nivel</p>
+          <p class="grey-text">Asistencia y capacitación de primer nivel</p>
         </article>
-        <article>
-          <img src="./Materiales/analytics-icon.svg" alt="" />
+        <article class="centerText">
+          <img class="green-bg" src="./Materiales/analytics-icon.svg" alt="" />
           <h5>Analíticas claras</h5>
-          <p>Disfruta de un dashboard de analíticas claras y accionables</p>
+          <p class="grey-text">
+            Disfruta de un dashboard de analíticas claras y accionables
+          </p>
         </article>
-        <article>
-          <img src="./Materiales/people-icon.svg" alt="" />
+        <article class="centerText">
+          <img class="green-bg" src="./Materiales/people-icon.svg" alt="" />
           <h5>Soluciones para equipos</h5>
-          <p>
+          <p class="grey-text">
             Facilita el accionar de tu empresa con nuestra suite de herramientas
           </p>
         </article>
@@ -72,48 +80,48 @@
           Nuestra facturacion se ajusta al tamaño de tu empresa. Tiempo de
           prueba de 7 dias en todos nuestros planes.
         </h5>
-        <div class="carousel">
+        <div class="carousel flex-around">
           <input type="radio" name="PriceList" />
-          <article>
+          <article class="centerText flex-column">
             <p class="price">PRECIO</p>
             <p>Plan basico</p>
-            <h4>10</h4>
-            <h5>Facturado anualmente</h5>
-            <ul>
+            <h4 class="big">10</h4>
+            <h5 class="grey-text">Facturado anualmente</h5>
+            <ul class="flex-column">
               <li>1GB de almacenamiento</li>
               <li>Dashboard completo</li>
               <li>Asistencia por correo</li>
               <li>Hasta 10 miembros</li>
             </ul>
-            <button class="greenBtn">Solicitar demo</button>
+            <label class="btn green-bg greenBtn">Solicitar demo</label>
           </article>
           <input type="radio" name="PriceList" checked />
-          <article>
+          <article class="centerText flex-column">
             <p class="price">PRECIO</p>
             <p>Plan Freelancer</p>
-            <h4>99</h4>
-            <h5>Facturado anualmente</h5>
-            <ul>
+            <h4 class="big">99</h4>
+            <h5 class="grey-text">Facturado anualmente</h5>
+            <ul class="flex-column">
               <li>Caracteristicas básicas</li>
               <li>Asistencia preferencial</li>
               <li>100GB de almacenamiento</li>
               <li>Hasta 100 miembros</li>
             </ul>
-            <button class="greenBtn">Solicitar demo</button>
+            <label class="btn green-bg greenBtn">Solicitar demo</label>
           </article>
           <input type="radio" name="PriceList" />
-          <article>
+          <article class="centerText flex-column">
             <p class="price">PRECIO</p>
             <p>Plan Empresa</p>
-            <h4>799</h4>
-            <h5>Facturado anualmente</h5>
-            <ul>
+            <h4 class="big">799</h4>
+            <h5 class="grey-text">Facturado anualmente</h5>
+            <ul class="flex-column">
               <li>Caracteristicas freelancer</li>
               <li>1TB de almacenamiento</li>
               <li>Asistencia telefonica 24/7</li>
               <li>Miembros ilimitados</li>
             </ul>
-            <button class="greenBtn">Solicitar demo</button>
+            <label class="btn green-bg greenBtn">Solicitar demo</label>
           </article>
           <button class="carruselPrev" onclick="carouselPrev()"><</button>
           <button class="carruselNext" onclick="carouselNext()">></button>
@@ -123,65 +131,106 @@
     <!-- MODAL DE BOTON INGRESAR -->
     <input class="popupCheck" id="inputModal" type="checkbox" hidden="none" />
     <div class="popup" id="modal">
-      <div class="modalInside">
-        <label class="closeBtn" for="inputModal">x</label>
-        <form id="modalForm">
-          <img class="modalImg" src="./Materiales/logo-blanco.png" />
+      <div class="flex-aligned flex-column modalInside">
+        <label class="btn closeBtn big" for="inputModal">x</label>
+        <form class="flex-column" id="modalForm">
+          <img class="green-bg modalImg" src="./Materiales/logo-blanco.png" />
           <h2 class="centerText">Ingresa a tu cuenta</h2>
           <h5 class="centerText">y empieza a conseguir resultados</h5>
-          <label class="labelModal" >Correo</label>
-          <input type="text" id="loginEmail" placeholder="email@example.com" />
+          <label class="labelModal">Correo</label>
+          <input
+            class="btn"
+            type="text"
+            id="loginEmail"
+            placeholder="email@example.com"
+          />
           <label class="labelModal">Contraseña</label>
-          <input type="password" id="loginPassword" placeholder="password"/>
-          <div class="rememberCheck labelModal">
+          <input
+            class="btn"
+            type="password"
+            id="loginPassword"
+            placeholder="password"
+          />
+          <div class="flex-aligned rememberCheck labelModal">
             <div class="checkFlex">
-              <input type="checkbox" />
+              <input class="btn" type="checkbox" />
               <label>Recordarme</label>
             </div>
             <a>Olvide mi contraseña</a>
           </div>
-          <button>Ingresar</button>
+          <button class="btn green-bg">Ingresar</button>
           <p class="centerText modalRegister">
-            Aún no tienes cuenta? <label class="registerLink" for="inputModalRegister">Registrarse</label>
+            Aún no tienes cuenta?
+            <label class="registerLink" for="inputModalRegister"
+              >Registrarse</label
+            >
           </p>
         </form>
       </div>
     </div>
 
     <!-- MODAL DE BOTON REGISTRARSE -->
-    <input class="popupCheck" id="inputModalRegister" type="checkbox" hidden="none" />
+    <input
+      class="popupCheck"
+      id="inputModalRegister"
+      type="checkbox"
+      hidden="none"
+    />
     <div class="popup" id="modal">
-      <div class="modalInside">
-        <label class="closeBtn" for="inputModalRegister">x</label>
-        <form id="modalFormRegister">
-          <img class="modalImg" src="./Materiales/logo-blanco.png" />
+      <div class="flex-aligned flex-column modalInside">
+        <label class="btn closeBtn big" for="inputModalRegister">x</label>
+        <form class="flex-column" id="modalFormRegister">
+          <img class="green-bg modalImg" src="./Materiales/logo-blanco.png" />
           <h2 class="centerText">Registro de cuenta</h2>
           <label class="labelModal">Ingrese su nombre</label>
-          <input id="registerName" type="text" placeholder="Juan Carlos">
+          <input
+            class="btn"
+            id="registerName"
+            type="text"
+            placeholder="Juan Carlos"
+          />
           <label class="labelModal">Region</label>
           <select name="regiones" size="1">
-           <option>Latinoamerica</option>
-           <option>NorteAmerica</option>
-           <option>Europa</option>
-           <option>Asia</option>
+            <option>Latinoamerica</option>
+            <option>NorteAmerica</option>
+            <option>Europa</option>
+            <option>Asia</option>
           </select>
           <label class="labelModal">Correo</label>
-          <input type="text" id="registerEmail" placeholder="email@example.com"/>
-          <label class="labelModal">Contraseña <i class="modalRegister">(minimo 5 caracteres)</i></label>
-          <input type="password" id="registerPassword" placeholder="password" />
+          <input
+            class="btn"
+            type="text"
+            id="registerEmail"
+            placeholder="email@example.com"
+          />
+          <label class="labelModal"
+            >Contraseña
+            <i class="modalRegister">(minimo 5 caracteres)</i></label
+          >
+          <input
+            class="btn"
+            type="password"
+            id="registerPassword"
+            placeholder="password"
+          />
           <label>Repita contraseña</label>
-          <input id="repeatPassword" type="password" placeholder="repeat password">
-          <button>Registrarme</button>
+          <input
+            class="btn"
+            id="repeatPassword"
+            type="password"
+            placeholder="repeat password"
+          />
+          <button class="btn green-bg">Registrarme</button>
         </form>
       </div>
     </div>
 
-    <footer>
+    <footer class="flex-aligned flex-column">
       <div class="logoContainer">
         <img class="logoImg" src="./Materiales/logo-verde.png" />
-        <p class="logo">Flex</p>
+        <p class="logo big">Flex</p>
       </div>
-      <ul>
+      <ul class="flex-around">
         <li>Producto</li>
         <li>Funcionalidades</li>
         <li>Precios</li>
@@ -193,7 +242,6 @@
       <hr />
       <p>©2022 Flex.Un producto ficticio de Senpai.</p>
     </footer>
-
 
     <script>
       // MUESTRA Y OCULTAR BARRA DE NAVEGACIÓN AL AJUSTAR TAMAÑO

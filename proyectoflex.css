@@ -1,6 +1,15 @@
 /* GENERAL */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -11,20 +20,45 @@ body,
 button {
   font-family: "Open Sans";
 }
+button,
+.btn {
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  white-space: nowrap;
+}
 
 .centerText {
   text-align: center;
 }
-
-/* BARRA DE NAVEGACION */
-
-.logoContainer {
+.big {
+  font-size: 2rem;
+}
+.grey-text {
+  opacity: 0.5;
+}
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+}
+.flex-aligned {
   display: flex;
   align-items: center;
 }
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.green-bg {
+  background-color: #2ad167;
+  color: white;
+}
+
+/* BARRA DE NAVEGACION */
+
 nav {
   user-select: none;
-  padding: 0.5rem;
+  padding: 0.4rem;
 }
 .navPopupBtn {
   display: none;
@@ -38,21 +72,21 @@ ul {
 }
 
 nav ul {
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 nav ul li,
-.btnLogin,
-.btnRegister,
-a {
-  transition: 0.5s;
+.loginRegister label,
+a,
+.btn {
+  transition: 0.1s;
+  cursor: pointer;
 }
 
 nav ul li:hover,
-.btnLogin:hover,
-.btnRegister:hover,
-a:hover {
-  cursor: pointer;
+.loginRegister label:hover,
+a:hover,
+.btn:hover {
   color: grey;
   transform: scale(1.05);
 }
@@ -60,22 +94,11 @@ a:hover {
 .loginRegister {
   display: flex;
   justify-content: flex-end;
-  padding-right: 0.5rem;
+  padding-right: 0.4rem;
 }
-
-.btnLogin {
-  border: none;
-  background-color: transparent;
-  padding: 0.5rem 1rem;
-}
-
-.btnRegister {
-  background-color: #2ad167;
-  padding: 0.5rem 1rem;
+.loginRegister label {
+  padding: 0.5rem 0.8rem;
   border-radius: 0.5rem;
-  border: none;
-  color: white;
-  cursor: pointer;
 }
 
 .logoImg {
@@ -85,7 +108,6 @@ a:hover {
 
 .logo {
   font-family: Roboto;
-  font-size: 2rem;
 }
 nav a {
   text-decoration: none;
@@ -100,10 +122,7 @@ nav a {
   inset: 0;
 }
 .modalInside {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   padding: 5rem 1rem;
   background-color: #2a3342;
   position: absolute;
@@ -120,15 +139,7 @@ nav a {
 }
 
 .modalInside form {
-  display: flex;
-  flex-direction: column;
   max-width: 25rem;
-}
-
-.modalInside input,
-.modalInside button {
-  padding: 0.5rem;
-  border-radius: 5px;
 }
 
 #modal label {
@@ -137,7 +148,6 @@ nav a {
 }
 
 .modalImg {
-  background-color: #2ad167;
   align-self: center;
   border-radius: 10px;
   padding: 0.5rem;
@@ -148,17 +158,13 @@ nav a {
   position: absolute;
   top: 0;
   font-weight: 1000;
-  font-size: 2rem;
   right: 0;
   padding: 0.5rem 1rem;
-  cursor: pointer;
 }
 
 /* SECCION CHECK (RECORDARME)*/
 .rememberCheck {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-top: 10px;
   font-size: 0.6rem;
 }
@@ -174,11 +180,8 @@ nav a {
 }
 
 .modalInside button {
-  background-color: #2ad167;
-  color: white;
   border: none;
   margin: 10px 0;
-  cursor: pointer;
 }
 
 .labelModal {
@@ -191,11 +194,10 @@ nav a {
 }
 
 select {
- padding: 0.5rem;
- 
+  padding: 0.5rem;
 }
 
-.repeatPassword{
+.repeatPassword {
   margin-bottom: 1rem;
 }
 /* SECCION HEADER */
@@ -206,8 +208,6 @@ header {
   grid-template-columns: 1fr 1fr;
 }
 .headerText {
-  display: flex;
-  flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   padding: 0 2rem;
@@ -215,39 +215,21 @@ header {
 
 .headerText span {
   font-size: 0.7rem;
-  background-color: #2ad167;
-  color: white;
   padding: 3px 6px;
   border-radius: 16px;
 }
 header h1 {
   font-family: Roboto;
-  font-size: 2rem;
   margin: 1rem 0;
 }
 header h5 {
-  opacity: 0.5;
   margin-bottom: 1rem;
 }
-header button {
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  margin-right: 8px;
-  cursor: pointer;
+.headerText div {
+  gap: 4px;
 }
-.greenBtn {
-  border: none;
-  color: white;
-  background-color: #2ad167;
-}
-.whiteBtn {
+.grey-border {
   border: 0.5px solid #0003;
-  background-color: white;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  margin-right: 8px;
-  font-size: 0.8rem;
-  cursor: pointer;
 }
 .headerImgContainer {
   position: relative;
@@ -269,16 +251,11 @@ header button {
 }
 
 /* SECCION CARACTERISTICAS */
-.caracteristics {
-  display: flex;
-  justify-content: space-around;
-}
+
 .caracteristics article {
-  text-align: center;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 .caracteristics img {
-  background-color: #2ad167;
   width: 2rem;
   height: 2rem;
   padding: 0.6rem;
@@ -288,35 +265,27 @@ header button {
   padding: 0.3rem 0;
 }
 .caracteristics p {
-  font-size: 0.7rem;
-  opacity: 0.7;
+  font-size: 0.8rem;
 }
 
 /* POP UP RESPONSIVE */
-.popupCheck {
+.popupCheck,
+.popup {
   display: none;
 }
-.popupCheck:checked + .popup {
-  opacity: 1;
-  z-index: 1000;
-}
 .popup {
-  opacity: 0;
-  z-index: -100;
-  transition: 0.2s;
+  animation: fadeIn 0.3s;
+}
+.popupCheck:checked + .popup {
+  display: flex;
 }
 
 /* SECCION PRECIOS CARRUSEL */
 .carousel {
-  display: flex;
   position: relative;
-  flex-direction: row;
-  justify-content: space-around;
 }
 
 .carousel article ul {
-  display: flex;
-  flex-direction: column;
   align-items: flex-start;
   padding-bottom: 1rem;
 }
@@ -329,7 +298,6 @@ header button {
   position: relative;
   bottom: 1px;
   border-radius: 50%;
-  font-size: 1rem;
   margin-right: 10px;
 }
 
@@ -341,7 +309,6 @@ header button {
 
 .carousel p {
   color: #2ad167;
-  text-align: center;
 }
 
 .price {
@@ -356,11 +323,9 @@ header button {
 
 #priceSection h5 {
   padding: 1rem 0 2rem 0;
-  opacity: 0.5;
 }
 
 #priceSection h4 {
-  font-size: 2rem;
   padding: 0.5rem;
 }
 #priceSection h4::before {
@@ -379,22 +344,6 @@ header button {
   animation: fadeIn 1s;
   padding: 2rem 1rem;
   width: 30%;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  border-radius: 5px;
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.carousel button {
-  padding: 0.5rem;
   border-radius: 5px;
 }
 
@@ -405,16 +354,11 @@ footer .logo {
 
 footer {
   background-color: #2a3342;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 3rem;
   color: #fff8;
 }
 
 footer ul {
-  display: flex;
-  justify-content: space-around;
   width: 80%;
   padding: 2rem 0;
   flex-wrap: wrap;
@@ -431,10 +375,7 @@ footer hr {
 }
 
 /* CARRUSEL INPUT */
-.carousel input {
-  display: none;
-}
-
+.carousel input,
 .carousel .carruselNext,
 .carousel .carruselPrev {
   display: none;
@@ -443,13 +384,9 @@ footer hr {
 /* MEDIA QUERIES */
 @media screen and (max-width: 500px) {
   .navPopupBtn {
-    text-align: center;
     display: block;
     margin: 0 0.5rem;
-    padding: 0.4rem 0;
     width: 2rem;
-    border: 1px solid #0002;
-    border-radius: 4px;
   }
   nav ul {
     position: absolute;

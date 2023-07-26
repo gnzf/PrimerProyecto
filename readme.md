@@ -73,3 +73,15 @@
 
 1. Revisar tamaños y fuentes.
 2. Buscar bugs visuales.
+
+[logros-Lunes]
+
+1. Agregamos modal de registro de usuario.
+2. Agregamos y mejoramos validacion de datos.
+3. Ajustamos tamaños de fuentes.
+
+[Objetivos-Martes]
+
+1. Revisar tamaños de pantalla donde se rompe la pagina.
+2. Probar y revisar funciones de javascript.
+3. Revision de codigo general.
